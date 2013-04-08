@@ -10,6 +10,9 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.util.Linkify;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -28,6 +31,39 @@ public class EventFragment extends Fragment {
     private LinearLayout whenLayout;
     private LinearLayout websiteLayout;
     private LinearLayout peopleLayout;
+
+    private Event event;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        setHasOptionsMenu(true);
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.main, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.aciton_share) {
+
+            if (null == event) {
+                return true;
+            }
+
+            // share it
+            Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+            sharingIntent.setType("text/plain");
+            sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Startup Weekend");
+            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Startup Weekend at " + event.getPlace() + " on " + event.getDate());
+            startActivity(sharingIntent);
+
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -49,6 +85,7 @@ public class EventFragment extends Fragment {
     }
 
     public void showEvent(final Event event) {
+        this.event = event;
         twitterLayout.setVisibility(View.VISIBLE);
         whereLayout.setVisibility(View.VISIBLE);
         whenLayout.setVisibility(View.VISIBLE);

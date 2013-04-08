@@ -496,7 +496,9 @@ containing a value of this type.
         public static final int yellow_texture_pat=0x7f02001b;
     }
     public static final class id {
-        public static final int action_settings=0x7f04001a;
+        public static final int aciton_end_tour=0x7f04001d;
+        public static final int aciton_share=0x7f04001b;
+        public static final int aciton_start_tour=0x7f04001c;
         public static final int bottom=0x7f040007;
         public static final int card_layout=0x7f040018;
         public static final int city_view=0x7f040015;
@@ -515,6 +517,7 @@ containing a value of this type.
         public static final int satellite=0x7f040002;
         public static final int terrain=0x7f040003;
         public static final int thatMap=0x7f040019;
+        public static final int thatTextView=0x7f04001a;
         public static final int titles=0x7f040009;
         public static final int top=0x7f040008;
         public static final int triangle=0x7f040005;
@@ -540,6 +543,7 @@ containing a value of this type.
     }
     public static final class menu {
         public static final int main=0x7f0b0000;
+        public static final int map=0x7f0b0001;
     }
     public static final class string {
         public static final int action_settings=0x7f050012;

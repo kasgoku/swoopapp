@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/aciton_start_tour"
+        android:icon="@android:drawable/ic_menu_slideshow"
+        android:orderInCategory="100"
+        android:showAsAction="always|withText"
+        android:title="Start Tour"/>
+    <item
+        android:id="@+id/aciton_end_tour"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel"
+        android:orderInCategory="100"
+        android:showAsAction="always|withText"
+        android:title="End Tour"/>
+
+</menu>
